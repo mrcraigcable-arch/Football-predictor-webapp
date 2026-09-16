@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07131f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Craig's Picks"><link rel="manifest" href="/static/manifest.json"><link rel="stylesheet" href="/static/app.css"><title>Craig's Football Predictor</title></head>
+<body><main class="shell"><header><div><div class="eyebrow">CRAIG'S FOOTBALL PREDICTOR</div><h1>Today's picks</h1><p id="summary">Choose a date, then analyse.</p></div><div class="status" id="status">V17 WEB</div></header>
+<section class="controls"><input id="day" type="date" value="{{today}}"><select id="league"><option>ALL SUPPORTED LEAGUES</option>{% for l in leagues %}<option>{{l}}</option>{% endfor %}</select><button id="go">Analyse</button></section>
+<div id="notice" class="notice hidden"></div>
+<nav class="tabs" aria-label="Pick views"><button class="tab active" data-tab="likely">🏆 Most likely</button><button class="tab" data-tab="value">💰 Best value</button><button class="tab" data-tab="both">🔥 Both</button></nav>
+<section id="hero"></section><section id="cards" class="cards"></section>
+<button id="allToggle" class="all-toggle hidden">View all analysed matches</button><section id="all" class="cards hidden"></section>
+<footer><span>Complex analysis underneath. Clear selections on top.</span><span id="oddsState"></span></footer></main>
+<dialog id="detail"><div class="dialog-head"><div><div class="eyebrow" id="dLeague"></div><h2 id="dTitle"></h2></div><button id="close" aria-label="Close">×</button></div><div id="detailBody"></div></dialog>
+<script src="/static/app.js"></script></body></html>
