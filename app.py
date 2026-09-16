@@ -3,7 +3,7 @@ from datetime import date, datetime
 import numpy as np
 import pandas as pd
 from flask import Flask, jsonify, render_template, request
-from predictor import *
+#from predictor import *
 
 app=Flask(__name__)
 
@@ -81,7 +81,7 @@ def analyze(match_day, scope="ALL SUPPORTED LEAGUES"):
 
 @app.get("/")
 def index():
-    return render_template("index.html",today=date.today().isoformat(),leagues=list(LEAGUES))
+    return render_template("index.html",today=date.today().isoformat(),leagues=["Premier League","Championship","Bundesliga","La Liga","Serie A","Ligue 1"])
 
 @app.get("/health")
 def health(): return jsonify({"ok":True})
