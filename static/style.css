@@ -1,0 +1,411 @@
+:root {
+  --bg: #071018;
+  --panel: #0d1822;
+  --panel2: #111f2b;
+  --line: #203443;
+  --text: #f5f7fa;
+  --muted: #8f9ba6;
+  --green: #18d77b;
+  --green-soft: rgba(24,215,123,.12);
+  --amber: #ffb020;
+  --red: #ff5263;
+  --blue: #4aa8ff;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.shell {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 18px 16px 100px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 27px;
+  letter-spacing: -0.8px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+input, button {
+  font: inherit;
+}
+
+input {
+  width: 100%;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 18px;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  flex: 0 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.tab.active {
+  background: var(--green-soft);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+#hero {
+  margin-bottom: 20px;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(24,215,123,.12), transparent 50%),
+    var(--panel);
+  border: 1px solid rgba(24,215,123,.4);
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.hero-label {
+  color: var(--green);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  margin-bottom: 12px;
+}
+
+.hero-team {
+  font-size: 28px;
+  font-weight: 850;
+  letter-spacing: -0.7px;
+  margin-bottom: 4px;
+}
+
+.hero-fixture {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.hero-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.hero-stat {
+  background: rgba(255,255,255,.035);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 11px;
+}
+
+.hero-stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.hero-stat strong {
+  font-size: 18px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 22px 2px 12px;
+}
+
+.section-title h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.section-title span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cards {
+  display: grid;
+  gap: 11px;
+}
+
+.match-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.match-card.top {
+  border-color: rgba(24,215,123,.55);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.rank {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.teams {
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.pick {
+  text-align: right;
+  min-width: 92px;
+}
+
+.pick-name {
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.pick-label {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.badge.green {
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.badge.amber {
+  color: var(--amber);
+  background: rgba(255,176,32,.12);
+}
+
+.badge.red {
+  color: var(--red);
+  background: rgba(255,82,99,.12);
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.quick-stat {
+  background: var(--panel2);
+  border-radius: 11px;
+  padding: 9px;
+}
+
+.quick-stat span {
+  color: var(--muted);
+  font-size: 10px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.quick-stat strong {
+  font-size: 14px;
+}
+
+.more {
+  width: 100%;
+  margin-top: 12px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 9px;
+  font-size: 12px;
+}
+
+.notice {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#detail {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(3,8,12,.86);
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+  padding: 30px 16px;
+}
+
+.dialog-box {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.detail-item {
+  background: var(--panel2);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.detail-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.detail-item strong {
+  font-size: 15px;
+}
+
+.close {
+  background: var(--panel2);
+  color: var(--text);
+  float: right;
+}
+
+.all-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 18px 2px 8px;
+}
+
+@media (max-width: 430px) {
+  .shell {
+    padding: 14px 12px 90px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .hero-team {
+    font-size: 25px;
+  }
+
+  .hero-card {
+    padding: 17px;
+  }
+
+  .match-card {
+    padding: 14px;
+  }
+
+  .quick-stats {
+    gap: 5px;
+  }
+}
