@@ -10,7 +10,7 @@ async function loadPredictions() {
       notice.classList.remove("hidden");
     }
 
-    const response = await fetch(`/api/predictions?day=${encodeURIComponent(day)}`);
+    const response = await fetch(`/api/picks?day=${encodeURIComponent(day)}`);
     const data = await response.json();
 
     if (!response.ok) {
